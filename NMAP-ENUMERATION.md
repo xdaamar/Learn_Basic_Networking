@@ -21,7 +21,7 @@ Topik: Networking
 
 - Selai itu, tujuan dari enumeration adalah untuk mengetahui Port mana yang bisa kita jadikan sebagai
   sasaran exploitasi. Port disini kita asumsikan sebagai gerbang, yang dimana port ini bisa menjadi
-  jalan keluar atau masuk nya suatu data melalui jaringan, denggan tehnik enumeration kita dapat mengetahui
+  jalan keluar atau masuk nya suatu data melalui jaringan, dengan teknik enumeration kita dapat mengetahui
   apakah gerbang yang telah di temukan/dipetakan lemah atau terdapat celah yang dapat memberi kita jalan masuk.
 
 ---
@@ -47,13 +47,17 @@ Langkah awal:
 ### 3. Hasil yang Didapat
 
 - ![hasil comand : sudo nmap -sS 127.0.0.1](/images/sudo%20nmap%20-sS%20127.0.0.1.png)
+  - Port 80 terbuka → kemungkinan web server
+
 - ![hasil comand : ip route](/images/sstunlp-tools.png)
+
 - ![hasil comand : sudo nmap -sS -sV <IP_ROUTER>](/images/sudo%20nmap.png)
+  - Port 80 terbuka → kemungkinan web server
 
 ---
 
 ## ❗Error & Masalah yang Ditemui
-- Selama praktik kaliini tidak ada eror atau kesulitan yanng aku temukan.
+- Selama praktik kali ini tidak ada eror atau kesulitan yanng aku temukan.
 
 ---
 
@@ -69,8 +73,10 @@ Langkah awal:
 ---
 
 ## 🧠 Catatan Pribadi
-- Hariini aku belajar bahwa Firewall tidak dapat menjamin bahwa sistem kita 100% aman,
-  banyak server diluar sana yang memblokir ping akan tetapi lupa memfilter port Database.
+- Hariini aku belajar bahwa Firewall bukan jaminan keamanan mutlak. Banyak sistem memblokir 
+  ICMP (ping) namun tetap membiarkan port database atau panel admin terbuka, yang berpotensi 
+  menjadi entry point bagi attacker.
+  Banyak server diluar sana yang memblokir ping akan tetapi lupa memfilter port Database.
   Dan dari materi hariini aku belajar pentingnya melakukan enumerasi atau mengenal target
   lebih dalam supaya exploitasi yang aku lakukan nantinya bisa ter arah dan tidak seperti
   membidik sasaran di tempat gelap.
